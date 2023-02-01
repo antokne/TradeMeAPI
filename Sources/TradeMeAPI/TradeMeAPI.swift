@@ -1,6 +1,10 @@
-public struct TradeMeAPI {
-    public private(set) var text = "Hello, World!"
+public class TradeMeAPI {
 
-    public init() {
+	public static let shared: TradeMeAPI = TradeMeAPI()
+	
+	public let listings: TradeMeListings
+	
+	public init(listings: TradeMeListings = TradeMeListings()) {
+		self.listings = listings
     }
 }
