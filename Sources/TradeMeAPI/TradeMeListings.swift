@@ -18,9 +18,12 @@ public class TradeMeListings: NSObject {
 	/// Get the current latest listings
 	/// Note currently just returns the first page. Needs to add paramater for page number.
 	/// - Returns:
-	public func getLastestListings() async throws -> [Any] {
+	/// - Parameters:
+	///   - page: page to retrieve
+	///   - perPage: number of listings per page
+	public func getLastestListings(page: Int = 1, perPage: Int = 20) async throws -> [Any] {
 		
-		guard let url = URL(string: "https://api.tmsandbox.co.nz/v1/listings/latest.json") else {
+		guard let url = URL(string: "https://api.tmsandbox.co.nz/v1/listings/latest.json?page=\(page)&rows=\(perPage)") else {
 			throw ListingsError.invalidUrl
 		}
 		
