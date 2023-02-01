@@ -1,3 +1,3 @@
 # TradeMeAPI
 
-A description of this package.
+A very basic example of a package to access the TradeMe API.
