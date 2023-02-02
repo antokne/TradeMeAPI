@@ -20,12 +20,12 @@ final class TradeMeAPITests: XCTestCase {
 			XCTFail("\(error)")
 		}
 		
-    }
+	}
 }
 
 private class MockTradeMeListings: TradeMeListings {
 	
-	override public func getLastestListings() async throws -> [Any] {
+	override public func getLastestListings(page: Int = 1, perPage: Int = 20) async throws -> [Any] {
 		
 		guard let file = Bundle.module.url(forResource: "latest-listings", withExtension: "json"),
 			  let data = try? Data(contentsOf: file) else {

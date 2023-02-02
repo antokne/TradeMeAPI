@@ -6,5 +6,5 @@ public class TradeMeAPI {
 	
 	public init(listings: TradeMeListings = TradeMeListings()) {
 		self.listings = listings
-    }
+	}
 }
